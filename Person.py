@@ -1,4 +1,5 @@
 import MenuItem as order
+import menu
 
 
 class Person:
@@ -72,12 +73,8 @@ class Person:
 
 
 if __name__ == "__main__":
-    water = order.MenuItem("water", 0.00)
-    soda = order.MenuItem("soda", 3.99)
-    pizza = order.MenuItem("pizza", 5.00)
-    lasagna = order.MenuItem("lasagna", 4.00)
-
-    matthew = Person(water, pizza)
-    matthew.remove_drink(water)
-    matthew.add_drink(soda)
+    # this is just testing if the class works correctly
+    matthew = Person(menu.water, menu.pizza)
+    matthew.remove_drink(menu.water)
+    matthew.add_drink(menu.sprite)
     print(matthew.get_total())
