@@ -6,7 +6,7 @@ class Person:
     drinks = []
     food = []
 
-    def __init__(self, _drink, _food):
+    def __init__(self, _drink=menu.water, _food=menu.bread):
         """
         The constructor to make a Person object sitting at the table
         :param _drink: The inital drink the person orders

@@ -10,6 +10,7 @@ sweet_tea = MenuItem.MenuItem("sweet tea", 1.00)
 punch = MenuItem.MenuItem("punch", 1.00)
 
 # food
+bread = MenuItem.MenuItem("bread", 0.00)
 pizza = MenuItem.MenuItem("pizza", 5.00)
 lasagna = MenuItem.MenuItem("lasagna", 5.00)
 hamburger = MenuItem.MenuItem("hamburger", 5.00)
