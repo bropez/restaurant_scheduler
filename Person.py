@@ -6,14 +6,30 @@ class Person:
     drinks = []
     food = []
 
-    def __init__(self, _drink=menu.water, _food=menu.bread):
+    def __init__(self, _name, _drink=menu.water, _food=menu.bread):
         """
         The constructor to make a Person object sitting at the table
         :param _drink: The inital drink the person orders
         :param _food: The initial dish the person orders
         """
+        self.name = _name
         self.drinks.append(_drink)
         self.food.append(_food)
+
+    def set_name(self, _name):
+        """
+        Setter for the name attribute for the Person
+        :param _name: The name to be changed to
+        :return: No return value
+        """
+        self.name = _name
+
+    def get_name(self):
+        """
+        The getter for the person's name
+        :return: The name of the Person
+        """
+        return self.name
 
     def add_drink(self, _drink):
         """
@@ -34,6 +50,14 @@ class Person:
             self.drinks.remove(_drink)
         except ValueError:
             print("This order doesn't have that drink.")
+
+    def print_drinks(self):
+        """
+        Printing all of the items that the person ordered
+        :return: No return value
+        """
+        for beverage in self.drinks:
+            print(beverage.get_name())
 
     def add_food(self, _food):
         """
@@ -56,6 +80,14 @@ class Person:
         except ValueError:
             print("This order doesn't have that food.")
 
+    def print_food(self):
+        """
+        Prints all of the dishes that the Person has ordered
+        :return: No return value
+        """
+        for dish in self.food:
+            print(dish.get_name())
+
     def get_total(self):
         """
         This gets the total price of the order by adding all of the prices together
@@ -74,7 +106,8 @@ class Person:
 
 if __name__ == "__main__":
     # this is just testing if the class works correctly
-    matthew = Person(menu.water, menu.pizza)
+    matthew = Person("matthew", menu.water, menu.pizza)
     matthew.remove_drink(menu.water)
     matthew.add_drink(menu.sprite)
+    matthew.print_drinks()
     print(matthew.get_total())
