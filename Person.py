@@ -3,9 +3,6 @@ import menu
 
 
 class Person:
-    drinks = []
-    food = []
-
     def __init__(self, _name, _drink=menu.water, _food=menu.bread):
         """
         The constructor to make a Person object sitting at the table
@@ -13,6 +10,8 @@ class Person:
         :param _food: The initial dish the person orders
         """
         self.name = _name
+        self.drinks = []
+        self.food = []
         self.drinks.append(_drink)
         self.food.append(_food)
 
@@ -87,6 +86,9 @@ class Person:
         """
         for dish in self.food:
             print(dish.get_name())
+
+    def get_order(self):
+        return self.drinks + self.food
 
     def get_total(self):
         """
