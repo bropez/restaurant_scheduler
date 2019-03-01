@@ -3,12 +3,13 @@ import menu
 
 
 class Table:
-    def __init__(self, _chairs=3, _name="walk in"):
+    def __init__(self, _table_num, _chairs=3, _name="walk in"):
         """
         Constructor for the Table class
         :param _chairs: The amount of chairs set at the table
         :param _name: The optional name for a potential reservation or walk in
         """
+        self.table_num = _table_num
         self.chairs = _chairs
         self.customers = []
         for person in range(self.chairs):
@@ -77,7 +78,12 @@ class Table:
 
 
 if __name__ == "__main__":
-    new_table = Table(4)
-    # new_table.set_reservation_name("benny")
-    # print(new_table.get_reservation_name())
-    new_table.customers[0].print_food()
+    new_table = Table(4, 4)
+    new_table.set_reservation_name("benny")
+    print("reservation holder", new_table.get_reservation_name())
+
+    new_table.add_food_order(3, menu.steak)
+    new_table.add_drink_order(3, menu.sprite)
+    print("customer chair #: 3")
+    for item in new_table.customers[3].get_order():
+        print(item.get_name())
