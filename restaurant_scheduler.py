@@ -1,5 +1,13 @@
 from tkinter import *
 from tkinter import ttk
+import Table
+
+
+def make_table(_table_num, _chairs):
+    reservation_name = input("What is the reservation name? ")
+
+    new_table = Table(_table_num, _chairs)
+    new_table.set_reservation_name(reservation_name)
 
 
 root = Tk()

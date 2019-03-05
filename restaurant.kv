@@ -1,0 +1,73 @@
+<CustButton@Button>:
+    size_hint_y: None
+    height: "40dp"
+    font_size: 20
+
+AllHolder:
+
+<AllHolder>:
+    orientation: 'vertical'
+    padding: 10
+    spacing: 10
+
+    GridLayout:
+        cols: 2
+        rows: 1
+        spacing: 10
+        padding: 10
+
+        CustButton:
+            text: 'Table 1'
+        CustButton:
+            text: 'Table 2'
+
+    GridLayout:
+        cols: 2
+        rows: 4
+        spacing: 10
+        padding: 10
+
+        Label:
+            text: "Table Number"
+            size_hint_y: None
+            height: "30dp"
+        TextInput:
+            size_hint_y: None
+            height: "30dp"
+            id: table_num
+        Label:
+            text: "Reservation Name"
+            size_hint_y: None
+            height: "30dp"
+        TextInput:
+            id: reserve_name
+            size_hint_y: None
+            height: "30dp"
+        Label:
+            text: "Chairs"
+            size_hint_y: None
+            height: "30dp"
+        BoxLayout:
+            size_hint_y: None
+            height: "30dp"
+
+            Button:
+                text: "1"
+                size_hint_x: 15
+            Button:
+                text: "2"
+                size_hint_x: 15
+            Button:
+                text: "3"
+                size_hint_x: 15
+            Button:
+                text: "4"
+                size_hint_x: 15
+        Label:
+            text: "Table Total"
+            size_hint_y: None
+            height: "30dp"
+        TextInput:
+            id: table_total
+            size_hint_y: None
+            height: "30dp"
